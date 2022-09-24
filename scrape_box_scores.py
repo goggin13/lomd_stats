@@ -17,7 +17,12 @@ for week in range(1, current_week + 1):
     print("Downloading box scores for week", week)
     box_scores = league.box_scores(week)
     print("Found", len(box_scores), "scores")
+
     for box_score in box_scores:
+        if (box_score.home_team == 0) or (box_score.away_team == 0):
+            print("skipping bye: ", box_score)
+            continue
+
         home_team_id = box_score.home_team.team_id
         for slot in box_score.home_lineup:
             data.append([

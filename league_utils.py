@@ -7,6 +7,7 @@ espn_s2 = os.popen('cat .espn_s2').read().rstrip()
 
 
 year = os.getenv('YEAR') or 2022
+year = int(year)
 print("Year:", year)
 
 def get_league():
@@ -29,7 +30,9 @@ def add_player_info(player):
 def write_player_info():
     with open('data/players.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
+        print("Read", sum(1 for row in csv_reader), "player rows")
         for row in csv_reader:
             PLAYER_DATA_DICT[row[0]] = row
 
+    print("Writing", len(PLAYER_DICT_DATA), "player rows")
     write_data('players.csv', PLAYER_DATA_DICT.values())
