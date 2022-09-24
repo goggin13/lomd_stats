@@ -1,4 +1,5 @@
 select
+  A.season,
   T.owner,
   A.bid_amount as bid,
   A.action,
@@ -16,5 +17,5 @@ inner join activity A on
   AND A.action != 'TRADED'
 inner join players P on
   A.player_id = P.id
-order by 7 DESC
+order by 8 DESC
 limit 10;

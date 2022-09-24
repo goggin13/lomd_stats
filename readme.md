@@ -15,8 +15,13 @@ psql -Ugoggin lomd -a -f sql/schema/create_tables.sql
 
 # Running scripts
 brew services start postgresql
-./main.sh
+YEAR=2022 CURRENT_WEEK=2 ./main.sh
+YEAR=2021 CURRENT_WEEK=17 ./main.sh
+YEAR=2020 CURRENT_WEEK=17 ./main.sh
+YEAR=2019 CURRENT_WEEK=16 ./main.sh
+
 
 # ToDo
 - backup strategy
 - Add Seasons so it can run year to year
+- Aidan + Mike team id collision

@@ -1,4 +1,5 @@
 select
+  D.season,
   T.owner,
   D.round_number,
   D.round_pick,
@@ -13,4 +14,4 @@ inner join draft D on
   D.team_id = T.id
 inner join players P on
   D.player_id = P.id
-order by 6 DESC
+order by 7 DESC

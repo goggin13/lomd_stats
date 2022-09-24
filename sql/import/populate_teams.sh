@@ -1,2 +1,2 @@
-psql -Ugoggin lomd -c "truncate teams"
-psql -Ugoggin lomd -c "\copy teams(id, name, owner) FROM 'data/teams.csv' DELIMITER ',';"
+psql -Ugoggin lomd -c "delete from teams where season = $YEAR"
+psql -Ugoggin lomd -c "\copy teams(season, id, name, owner) FROM 'data/teams.csv' DELIMITER ',';"

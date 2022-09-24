@@ -4,7 +4,7 @@ import datetime
 
 league = league_utils.get_league()
 
-size = os.getenv('SIZE') or 10
+size = os.getenv('SIZE') or 1000
 print("fetching (", size, ") recent activity...")
 recent_activity = league.recent_activity(size=size)
 print("found " + str(len(recent_activity)) + " items")
