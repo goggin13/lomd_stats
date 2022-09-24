@@ -33,7 +33,8 @@ for week in range(1, current_week + 1):
                 slot.points,
                 slot.projected_points,
                 slot.pro_pos_rank,
-                slot.game_played])
+                slot.game_played,
+                box_score.is_playoff])
 
         away_team_id = box_score.away_team.team_id
         for slot in box_score.away_lineup:
@@ -45,7 +46,8 @@ for week in range(1, current_week + 1):
                 slot.points,
                 slot.projected_points,
                 slot.pro_pos_rank,
-                slot.game_played])
+                slot.game_played,
+                box_score.is_playoff])
 
 
         row = [week]

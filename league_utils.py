@@ -33,7 +33,7 @@ def write_player_info():
         print("Read", sum(1 for row in csv_reader), "player rows")
         print(len(PLAYER_DATA_DICT.values()), "player rows in memory")
         for row in csv_reader:
-            PLAYER_DATA_DICT[row[0]] = row
+            PLAYER_DATA_DICT[str(row[0])] = row
 
     print("Writing", len(PLAYER_DATA_DICT.values()), "player rows")
     write_data('players.csv', PLAYER_DATA_DICT.values(), False)

@@ -47,6 +47,7 @@ CREATE TABLE box_scores (
   projected_points REAL,
   pro_pos_rank INTEGER,
   game_played INTEGER, -- 0 (not played/playing) or 100 (finished game)
+  playoff BOOLEAN,
   PRIMARY KEY(season, week_id, team_id, player_id)
 );
 

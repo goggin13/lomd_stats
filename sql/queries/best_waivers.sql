@@ -9,10 +9,13 @@ select
   (select coalesce(sum(points), 0)
    from box_scores B
    where B.team_id = T.id
-         and B.player_id = A.player_id) as points
+         and B.player_id = A.player_id
+         and not B.playoff
+         and B.season = A.season) as points
 from teams T
 inner join activity A on
   A.team_id = T.id
+  AND A.season = T.season
   AND A.action != 'DROPPED'
   AND A.action != 'TRADED'
 inner join players P on
