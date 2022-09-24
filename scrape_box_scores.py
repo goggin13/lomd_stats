@@ -20,25 +20,36 @@ for week in range(1, current_week + 1):
     for box_score in box_scores:
         home_team_id = box_score.home_team.team_id
         for slot in box_score.home_lineup:
-            player_id = slot.playerId
-            points = slot.points
-            position = slot.position
-            data.append([week, home_team_id, player_id, position, points])
+            data.append([
+                week,
+                home_team_id,
+                slot.playerId,
+                slot.position,
+                slot.points,
+                slot.projected_points,
+                slot.pro_pos_rank,
+                slot.game_played])
 
         away_team_id = box_score.away_team.team_id
         for slot in box_score.away_lineup:
-            player_id = slot.playerId
-            points = slot.points
-            position = slot.position
-            data.append([week, away_team_id, player_id, position, points])
+            data.append([
+                week,
+                away_team_id,
+                slot.playerId,
+                slot.position,
+                slot.points,
+                slot.projected_points,
+                slot.pro_pos_rank,
+                slot.game_played])
 
 
-        row = None
+        row = [week]
         if box_score.home_score > box_score.away_score:
-            row = [week, home_team_id, box_score.home_score, away_team_id, box_score.away_score]
+            row += [home_team_id, box_score.home_score, away_team_id, box_score.away_score]
         else:
-            row = [week, away_team_id, box_score.away_score, home_team_id, box_score.home_score]
+            row += [away_team_id, box_score.away_score, home_team_id, box_score.home_score]
 
+        row += [box_score.is_playoff, box_score.matchup_type]
         team_data.append(row)
 
 

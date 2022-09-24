@@ -40,6 +40,9 @@ CREATE TABLE box_scores (
   player_id BIGINT,
   position VARCHAR(5),
   points REAL,
+  projected_points REAL,
+  pro_pos_rank INTEGER,
+  game_played INTEGER, -- 0 (not played/playing) or 100 (finished game)
   PRIMARY KEY(week_id, team_id, player_id)
 );
 
@@ -50,5 +53,7 @@ CREATE TABLE team_box_scores (
   winning_score REAL,
   losing_team_id INTEGER,
   losing_score REAL,
+  playoff BOOLEAN,
+  matchup_type VARCHAR(50),
   PRIMARY KEY(week_id, winning_team_id)
 );
