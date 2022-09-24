@@ -18,4 +18,5 @@ brew services start postgresql
 ./main.sh
 
 # ToDo
+- backup strategy
 - Add Seasons so it can run year to year
