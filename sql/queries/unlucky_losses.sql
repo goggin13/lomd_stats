@@ -13,7 +13,7 @@ select
    from team_box_scores
    where week_id = TBS.week_id
    group by week_id)::numeric, 2)) as diff,
-  LT.id as unlucky,
+  LT.name as unlucky,
   TBS.losing_score as score,
   WT.name as opponent,
   TBS.winning_score as score

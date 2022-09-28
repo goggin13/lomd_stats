@@ -22,6 +22,9 @@ YEAR=2019 CURRENT_WEEK=16 ./main.sh
 
 
 # ToDo
+- standings_table
+- ignore all playoff data?
+- "Id be interested in points of waiver pick ups in starting lineups."
 - backup strategy
 - Add Seasons so it can run year to year
-- Aidan + Mike team id collision
+- Aidan + Mike team id collision (only an issue in 2022 season)
