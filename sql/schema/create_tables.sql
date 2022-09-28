@@ -4,6 +4,15 @@ CREATE TABLE teams (
   id INTEGER,
   name VARCHAR(50),
   owner VARCHAR(50),
+  standing INTEGER,
+  final_standing INTEGER,
+  points_for REAL,
+  points_against REAL,
+  acquisitions INTEGER,
+  drops INTEGER,
+  trades INTEGER,
+  wins INTEGER,
+  losses INTEGER,
   PRIMARY KEY (season, id)
 );
 
