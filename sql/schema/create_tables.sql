@@ -51,7 +51,7 @@ CREATE TABLE box_scores (
   week_id INTEGER,
   team_id INTEGER,
   player_id BIGINT,
-  position VARCHAR(5),
+  position VARCHAR(10),
   points REAL,
   projected_points REAL,
   pro_pos_rank INTEGER,
